@@ -14,7 +14,7 @@ pipeline {
     }
     stage('Test') {
       steps {
-        // powershell '.\\test\\fpcunitproject.exe -a > results.xml'
+        powershell '.\\test\\fpcunitproject.exe -a > results.xml'
         step([$class: 'XUnitPublisher', testTimeMargin: '3000', thresholdMode: 1, 
           thresholds: [[$class: 'FailedThreshold', failureNewThreshold: '1', failureThreshold: '1', 
           unstableNewThreshold: '1', unstableThreshold: '1'], [$class: 'SkippedThreshold', 
