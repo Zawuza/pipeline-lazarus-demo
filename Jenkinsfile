@@ -6,5 +6,10 @@ pipeline {
         git 'https://github.com/Zawuza/pipeline-lazarus-demo'
       }
     }
+    stage('Build') {
+      steps {
+        bat 'lazbuild onebutton.lpi'
+      }
+    }
   }
 }
