@@ -20,7 +20,7 @@ pipeline {
           unstableNewThreshold: '1', unstableThreshold: '1'], [$class: 'SkippedThreshold', 
           failureNewThreshold: '1', failureThreshold: '1', unstableNewThreshold: '1', 
           unstableThreshold: '1']], tools: [[$class: 'FPCUnitJunitHudsonTestType', deleteOutputFiles: true, 
-          failIfNotNew: true, pattern: '.\\test\\results.xml', skipNoTestFiles: false, stopProcessingIfError: true]]])
+          failIfNotNew: true, pattern: 'results.xml', skipNoTestFiles: false, stopProcessingIfError: true]]])
       }
     }
   }
