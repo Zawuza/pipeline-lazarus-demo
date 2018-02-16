@@ -14,7 +14,7 @@ pipeline {
     }
     stage('Test') {
       steps {
-        powershell '.\\fpcunitproject.exe -a > results.xml'
+        powershell '.\\test\\fpcunitproject.exe -a > results.xml'
       }
     }
   }
