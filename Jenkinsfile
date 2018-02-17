@@ -14,13 +14,14 @@ pipeline {
     }
     stage('Test') {
       steps {
-        // powershell '.\\test\\fpcunitproject.exe -a > results.xml'
+        powershell '.\\test\\fpcunitproject.exe -a > results.xml'
+        powershell '.\\tools\\encodingtool\\encode.ps1'
         step([$class: 'XUnitPublisher', testTimeMargin: '3000', thresholdMode: 1, 
           thresholds: [[$class: 'FailedThreshold', failureNewThreshold: '1', failureThreshold: '1', 
           unstableNewThreshold: '1', unstableThreshold: '1'], [$class: 'SkippedThreshold', 
           failureNewThreshold: '1', failureThreshold: '1', unstableNewThreshold: '1', 
           unstableThreshold: '1']], tools: [[$class: 'FPCUnitJunitHudsonTestType', deleteOutputFiles: true, 
-          failIfNotNew: true, pattern: 'results.xml', skipNoTestFiles: false, stopProcessingIfError: true]]])
+          failIfNotNew: true, pattern: 'results2.xml', skipNoTestFiles: false, stopProcessingIfError: true]]])
       }
     }
   }
