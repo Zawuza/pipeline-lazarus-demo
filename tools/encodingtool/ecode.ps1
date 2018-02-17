@@ -1,0 +1,1 @@
+Get-Content results.xml -Encoding Unicode | Set-Content -Encoding UTF8 results2.xml
