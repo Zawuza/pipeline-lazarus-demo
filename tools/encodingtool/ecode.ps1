@@ -1,1 +1,3 @@
-Get-Content results.xml -Encoding Unicode | Set-Content -Encoding UTF8 results2.xml
+$filename = (Get-Location).Path + "\results2.xml"
+$content = Get-Content results_test.xml -Encoding Unicode 
+[IO.File]::WriteAllLines($filename, $content)
