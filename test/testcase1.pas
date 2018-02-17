@@ -18,7 +18,7 @@ implementation
 
 procedure TTestCase1.TestHookUp;
 begin
-  AssertEquals('lol','lol');
+  AssertEquals('lol','logl');
 end;
 
 
